@@ -1,0 +1,6 @@
+@echo off
+echo Listing processes using port 5000...
+netstat -aon | findstr :5000
+echo Listing processes using port 6019...
+netstat -aon | findstr :6019
+pause
