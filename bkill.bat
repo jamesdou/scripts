@@ -11,3 +11,10 @@ for /f "tokens=5" %%a in ('netstat -aon ^| findstr :6019') do (
     taskkill /F /PID %%a
   )
 )
+for /f "tokens=5" %%a in ('netstat -aon ^| findstr :6379') do (
+  if not %%a==0 (
+    echo Killing process on port 6379 with PID %%a
+    taskkill /F /PID %%a
+  )
+)
+
